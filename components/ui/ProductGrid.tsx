@@ -120,7 +120,7 @@ const ProductGrid = ({ products }: Props) => {
         <main className='container mx-auto px-4 py-8'>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-40">
                 {products.map((product, index) => (
-                    <Link key={index} href={`/products/${product.id}`} className='flex flex-col group-relative'>
+                    <Link key={index} href={`/products/${product.id}`} className='flex flex-col relative group'>
                         <div className='aspect-square rounded-md overflow-hidden'>
                             <Image
                                 src={product.images[0].src || '/placeholder.svg'}
@@ -129,8 +129,16 @@ const ProductGrid = ({ products }: Props) => {
                                 height={96}
                                 className='h-full w-full object-contain'
                             />
-                            <h3 className='mt-2 text-lg font-medium text-gray-900'>{product.name}</h3>
-                            <p className='text-gray-500'>${product.price}</p>
+                        </div>
+                        <div className='group-hover:opacity-100 opacity-0 flex flex-col justify-end'>
+                            <div className='flex justify-between items-center mb-2'>
+                                <h3 className='text-base font-seminold text-primary'>
+                                    {product.name}
+                                </h3>
+                                <p className='text-base font-seminold text-primary'>
+                                    ${product.price}
+                                </p>
+                            </div>
                         </div>
                     </Link>
                 ))}
