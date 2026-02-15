@@ -7,6 +7,7 @@ import React, { use, useState } from 'react'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from './sheet'
 import { useCart } from '@/hooks/use-cart'
 import Image from 'next/image'
+import Checkout from './checkout'
 
 type Props = {
     products: any[]
@@ -61,7 +62,7 @@ const ProductGrid = ({ products }: Props) => {
                                 </div>
                             ): (
                                 <div className='flex flex-col h-full'>
-                                    <div className='flex-1 overflow-auto py-6'>
+                                    <div className='flex-1 overflow-auto p-6'>
                                         <ul className='space-y-6'>
                                             {cartItems.map((item) => (
                                                 <li key={item.id} className='flex gap-4'>
@@ -101,13 +102,13 @@ const ProductGrid = ({ products }: Props) => {
                                         </ul>
                                     </div>
 
-                                    <div className='border-t border-gray-200 py-6'>
+                                    <div className='border-t border-gray-200 p-6'>
                                             <div className='flex justify-between text-base font-medium text-gray-900 mb-4'>
                                                 <p>Subtotal</p>
                                                 <p>{cartTotal}</p>
                                             </div>
 
-                                            {/* <Checkout/> */}
+                                            <Checkout/>
                                     </div>
                                 </div>
                             )}
@@ -120,7 +121,7 @@ const ProductGrid = ({ products }: Props) => {
         <main className='container mx-auto px-4 py-8'>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-40">
                 {products.map((product, index) => (
-                    <Link key={index} href={`/products/${product.id}`} className='flex flex-col relative group'>
+                    <Link key={index} href={`/product/${product.id}`} className='flex flex-col relative group'>
                         <div className='aspect-square rounded-md overflow-hidden'>
                             <Image
                                 src={product.images[0].src || '/placeholder.svg'}
@@ -136,7 +137,7 @@ const ProductGrid = ({ products }: Props) => {
                                     {product.name}
                                 </h3>
                                 <p className='text-base font-seminold text-primary'>
-                                    ${product.price}
+                                    ₹{product.price}
                                 </p>
                             </div>
                         </div>

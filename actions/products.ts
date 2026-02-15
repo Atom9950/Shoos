@@ -12,3 +12,10 @@ export const getProducts = async () => {
     const products = await WooCommerce.get("products");
     return products.data;
 }
+
+export const getProduct = async (id: string) => {
+    const product = await WooCommerce.get(`products`, {
+        id: parseInt(id)
+    });
+    return product.data;
+}

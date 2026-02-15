@@ -40,11 +40,11 @@ const CartProvider = ({children}: Props) => {
         if (existingItem) {
             return prevItems.map(item =>
                 item.id === product.id
-                    ? { ...item, quantity: item.quantity + 1 }
+                    ? { ...item, quantity: item.quantity + (product.quantity || 1) }
                     : item
             );
         }
-        return [...prevItems, { ...product, quantity: 1 }];
+        return [...prevItems, { ...product, quantity: product.quantity || 1 }];
     })
     setIsOpen(true)
   }, [])
@@ -55,7 +55,7 @@ const CartProvider = ({children}: Props) => {
 
   const updateQuantity = useCallback((productId: string, quantity: number) => {
 
-    if (quantity<= 1){
+    if (quantity < 1){
         removeItem(productId)
         return
     }
