@@ -55,7 +55,7 @@ const ProductPage = async ({params}: Props) => {
                 </div>
 
                 <div className='lg:col-span-1'>
-                    <ProductAction/>
+                    <ProductAction product={product}/>
                 </div>
             </div>
         </div>
