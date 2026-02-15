@@ -41,14 +41,13 @@ const ProductGrid = ({ products }: Props) => {
                     )}
 
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                        <SheetTrigger>
-                            <button className='text-lg font-medium flex items-center gap-2 hover:cursor-pointer'><span>Cart</span>
-                                {cartItems.length > 0 && (
-                                    <span className='inline-flex items-center justify-center w-5 h-5 text-xs font-medium text-white bg-black rounded-full'>
-                                        {cartItems.reduce((total, item) => total + item.quantity, 0)}
-                                    </span>
-                                )}
-                            </button>
+                        <SheetTrigger className='text-lg font-medium flex items-center gap-2 hover:cursor-pointer'>
+                            <span>Cart</span>
+                            {cartItems.length > 0 && (
+                                <span className='inline-flex items-center justify-center w-5 h-5 text-xs font-medium text-white bg-black rounded-full'>
+                                    {cartItems.reduce((total, item) => total + item.quantity, 0)}
+                                </span>
+                            )}
                         </SheetTrigger>
 
                         <SheetContent className='w-full sm:max-w-md'>
