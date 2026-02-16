@@ -28,7 +28,7 @@ const ProductGrid = ({ products, category }: Props) => {
 
                 </button>
                 {toggle && (
-                    <div className='w-full flex gap-x-10 items-center justify-center '>
+                    <div className='w-full flex flex-col md:flex-row gap-4 md:gap-x-10 items-center justify-center py-4 md:py-0'>
                         {navbarData.map((item) => (
                             <Link 
                                 href={item.link}
