@@ -59,7 +59,7 @@ const ProductAction = ({ product }: Props) => {
       <div>
         <div className="grid grid-cols-3 gap-4 pb-2 border-b text-base font-medium">
           <div>Product</div>
-          <div className="text-center">Q</div>
+          <div className="text-center">Quantity</div>
           <div className="text-right">Price</div>
         </div>
 

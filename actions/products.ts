@@ -9,7 +9,7 @@ const WooCommerce = new WooCommerceRestApi({
 })
 
 export const getProducts = async () => {
-    const products = await WooCommerce.get("products");
+    const products = await WooCommerce.get("products?orderby=date&order=asc&per_page=100");
     return products.data;
 }
 
