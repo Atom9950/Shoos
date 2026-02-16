@@ -6,7 +6,7 @@ export default async function Home() {
 
   const products = await getProducts();
   const shoeProducts = products.filter(
-    (product) => product.categories?.some((cat: any) => cat.name.toLowerCase() === 'shoes')
+    (product: any) => product.categories?.some((cat: any) => cat.name.toLowerCase() === 'shoes')
   );
   const limitedProducts = shoeProducts.slice(0, 8);
   return <ProductGrid products={limitedProducts} />

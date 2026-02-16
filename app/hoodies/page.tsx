@@ -5,7 +5,7 @@ export default async function Hoodies() {
   const products = await getProducts();
   
   const filteredProducts = products.filter(
-    (product) => product.categories?.some((cat: any) => cat.name.toLowerCase() === 'hoodies')
+    (product: any) => product.categories?.some((cat: any) => cat.name.toLowerCase() === 'hoodies')
   );
 
   return <ProductGrid products={filteredProducts} category="Hoodies" />;
