@@ -11,9 +11,10 @@ import Checkout from './checkout'
 
 type Props = {
     products: any[]
+    category?: string
 }
 
-const ProductGrid = ({ products }: Props) => {
+const ProductGrid = ({ products, category }: Props) => {
     const [toggle, setToggle] = useState(false);
     const {isOpen, setIsOpen, items:cartItems, updateQuantity, removeItem: removeFromCart, cartTotal} = useCart()
   return (
@@ -38,6 +39,10 @@ const ProductGrid = ({ products }: Props) => {
                             </Link>
                         ))}
                     </div>
+                    )}
+
+                    {!toggle && (
+                       <h1 className='text-lg font-medium text-primary'>{category || 'Shoos'}</h1>
                     )}
 
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>

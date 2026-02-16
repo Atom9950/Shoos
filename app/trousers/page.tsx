@@ -8,5 +8,5 @@ export default async function Trousers() {
     (product) => product.categories?.some((cat: any) => cat.name.toLowerCase() === 'trousers')
   );
 
-  return <ProductGrid products={filteredProducts} />;
+  return <ProductGrid products={filteredProducts} category="Trousers" />;
 }
