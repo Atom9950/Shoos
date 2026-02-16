@@ -2,8 +2,8 @@ import { getProduct } from '@/actions/products'
 import ProductAction from '@/components/ui/product/ProductAction'
 import ProductQuantity from '@/components/ui/product/ProductQuantity'
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
+import BackButton from '@/components/ui/back-button'
 
 type Props = {
     params: Promise<{
@@ -14,15 +14,11 @@ type Props = {
 const ProductPage = async ({params}: Props) => {
   const {id} = await params
   const product = await getProduct(id)
+  
   return (
     <div className='min-h-screen'>
         <div className='container mx-auto py-6 px-4'>
-            <Link
-             href={'/'}
-             className='inline-flex items-center text-lg font-medium mb-6 hover: text-gray-600'
-            >
-                Back
-            </Link>
+            <BackButton />
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className='lg:col-span-2 flex flex-col gap-6'>
