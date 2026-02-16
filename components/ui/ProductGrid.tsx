@@ -135,7 +135,7 @@ const ProductGrid = ({ products, category }: Props) => {
                                 className='h-full w-full object-contain'
                             />
                         </div>
-                        <div className='group-hover:opacity-100 opacity-0 flex flex-col justify-end'>
+                        <div className='md:group-hover:opacity-100 md:opacity-0 opacity-100 flex flex-col justify-end'>
                             <div className='flex justify-between items-center mb-2'>
                                 <h3 className='text-base font-seminold text-primary'>
                                     {product.name}
