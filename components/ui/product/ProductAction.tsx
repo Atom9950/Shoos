@@ -22,6 +22,9 @@ const ProductAction = ({ product }: Props) => {
   
   const [loading, setLoading] = useState(false)
 
+  const currProductQuantity =
+    cartItems.find((item) => item.id === product?.id)?.quantity || 0
+
   const handleBuyNow = async () => {
     if (!product) return
     
@@ -89,7 +92,7 @@ const ProductAction = ({ product }: Props) => {
           <Button 
             className="w-full bg-black text-white hover:bg-gray-800"
             size="lg"
-            disabled={loading}
+            disabled={loading || currProductQuantity > 1}
             onClick={handleBuyNow}
           >
             {loading ? 'Processing...' : 'Buy Now'}
