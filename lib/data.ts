@@ -11,7 +11,7 @@ export const navbarData = [
   },
   {
     idx: 3,
-    title: 'Shirts',
-    link: '/shirts',
+    title: 'Trousers',
+    link: '/trousers',
   },
 ];
