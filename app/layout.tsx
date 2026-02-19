@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Mono } from "next/font/google";
 import "./globals.css";
 import CartProvider from "@/providers/cart-context";
+import PageTransition from "@/components/PageTransition";
 
 const dmMono = DM_Mono({
   weight: "400",
@@ -27,7 +28,9 @@ export default function RootLayout({
         className={`${dmMono.className}`}
       >
         <CartProvider>
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </CartProvider>
 
       </body>
