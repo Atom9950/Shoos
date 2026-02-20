@@ -45,7 +45,7 @@ const Checkout = (props: Props) => {
     <div className="mt-6 grid gap-4">
       <Button
         size="lg"
-        className="w-full"
+        className="w-full hover:bg-gray-800 cursor-pointer"
         disabled={loading || items.length === 0}
         onClick={onCheckout}
       >

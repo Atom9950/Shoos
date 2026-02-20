@@ -9,7 +9,7 @@ const BackButton = () => {
   return (
     <button
       onClick={() => router.back()}
-      className='inline-flex items-center text-lg font-medium mb-6 hover:text-gray-600'
+      className='inline-flex items-center text-lg font-medium mb-6 hover:text-gray-600 hover:cursor-pointer'
     >
       Back
     </button>

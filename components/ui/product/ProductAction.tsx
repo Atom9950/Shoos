@@ -90,7 +90,7 @@ const ProductAction = ({ product }: Props) => {
       <div className="flex flex-col gap-2 mt-4">
         {product && (
           <Button 
-            className="w-full bg-black text-white hover:bg-gray-800"
+            className="w-full bg-black text-white hover:bg-gray-800 cursor-pointer"
             size="lg"
             disabled={loading || currProductQuantity > 1}
             onClick={handleBuyNow}
